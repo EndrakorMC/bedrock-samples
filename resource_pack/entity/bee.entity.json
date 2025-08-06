@@ -44,3 +44,60 @@
     }
   }
 }
+{
+  "format_version": "1.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:random_bee",
+      "spawn_egg": "minecraft:bee_spawn_egg",
+      "is_spawnable": true
+    },
+    "components": {
+      "minecraft:geometry": "geometry.random_bee",
+      "minecraft:behavior": {
+        "minecraft:interact": {
+          "on_interact": {
+            "type": "tame",
+            "with_item": "minecraft:honey_bottle",
+            "success_message": "You tamed a random bee!"
+          }
+        },
+        "minecraft:spawn": {
+          "type": "random",
+          "choices": [
+            {
+              "type": "minecraft:bee_a",
+              "weight": 50
+            },
+            {
+              "type": "minecraft:bee_b",
+              "weight": 50
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+{
+  "format_version": "1.10",
+  "minecraft:geometry": {
+    "description": {
+      "identifier": "geometry.bee_b",
+      "texture": "textures/entities/bee_b"
+    },
+    "bones": [
+      {
+        "name": "bee_b_body",
+        "pivot": [0.0, 0.0, 0.0],
+        "cubes": [
+          {
+            "origin": [-0.5, 0.0, -0.5],
+            "size": [1.0, 1.0, 1.0],
+            "uv": [0, 0]
+          }
+        ]
+      }
+    ]
+  }
+}
